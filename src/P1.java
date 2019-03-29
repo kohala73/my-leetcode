@@ -13,10 +13,10 @@ import java.util.HashMap;
  * Because nums[0] + nums[1] = 2 + 7 = 9,
  * return [0, 1].
  *
- * @author: xuyongjian
+ * @author: lisp2c
  * @date: 2019-02-22
  */
-public class TwoSum {
+public class P1 {
 
     public static int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
