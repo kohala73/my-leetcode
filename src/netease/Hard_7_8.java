@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  *
  * @author xuyj
  * @date 2024/4/22
- */public class _Hard_7_8 {
+ */public class Hard_7_8 {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);

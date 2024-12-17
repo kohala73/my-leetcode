@@ -49,52 +49,55 @@ public class Hard_7_2 {
 
     }
 
-}
+
+    static class UnionFind{
+        int[] parent;
+        int[] rank;
 
 
-class UnionFind{
-    int[] parent;
-    int[] rank;
+        public UnionFind(int n){
+            parent=new int[n];
+            rank=new int[n];
+            for(int i=0;i<n;i++){
+                parent[i]=i;
+            }
 
-
-    public UnionFind(int n){
-        parent=new int[n];
-        rank=new int[n];
-        for(int i=0;i<n;i++){
-            parent[i]=i;
         }
 
-    }
+        public void union(int x,int y){
+            int rootX=find(x),rootY=find(y);
 
-    public void union(int x,int y){
-        int rootX=find(x),rootY=find(y);
+            if(rootX!=rootY){
+                int rankX=rank[rootX],rankY=rank[rootY];
+                if(rankX>rankY){
+                    parent[rootY]=rootX;
 
-        if(rootX!=rootY){
-            int rankX=rank[rootX],rankY=rank[rootY];
-            if(rankX>rankY){
-                parent[rootY]=rootX;
+                }else if(rankX<rankY){
+                    parent[rootX]=rootY;
+                }else{
+                    parent[rootX]=rootY;
+                    rank[rootY]++;
+                }
 
-            }else if(rankX<rankY){
-                parent[rootX]=rootY;
-            }else{
-                parent[rootX]=rootY;
-                rank[rootY]++;
+
             }
 
 
         }
 
+        public int find(int x){
+            if(parent[x]==x){
+                return parent[x];
 
-    }
-
-    public int find(int x){
-        if(parent[x]==x){
-            return parent[x];
-
+            }
+            return find(parent[x]);
         }
-        return find(parent[x]);
     }
+
 }
+
+
+
 
 
 

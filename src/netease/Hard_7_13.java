@@ -13,7 +13,7 @@ import java.util.Set;
  * @author xuyj
  * @date 2024/4/22
  */
-public class _Hard_7_13 {
+public class Hard_7_13 {
 
     public static void main(String args[]) {
         Scanner sc=  new Scanner(System.in);
