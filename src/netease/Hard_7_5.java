@@ -58,20 +58,18 @@ public class Hard_7_5 {
         int ind=1;
         while(!queue.isEmpty() && ind<valArr.length){
             TreeNode node=queue.poll();
-            if(node==null){
-                continue;
+
+            if(!"null".equals(valArr[ind])){
+                node.left=new TreeNode(Integer.parseInt(valArr[ind]));
+                queue.offer(node.left);
             }
 
-            String leftVal=valArr[ind];
-            TreeNode left="null".equals(leftVal)?null:new TreeNode(Integer.valueOf(leftVal));
-            node.left=left;
-            queue.offer(left);
             ind++;
+            if(ind<valArr.length &&!"null".equals(valArr[ind])){
+                node.right=new TreeNode(Integer.valueOf(valArr[ind]));
+                queue.offer(node.right);
 
-            String rightVal=valArr[ind];
-            TreeNode right="null".equals(rightVal)?null:new TreeNode(Integer.valueOf(rightVal));
-            node.right=right;
-            queue.offer(right);
+            }
             ind++;
         }
         return root;
